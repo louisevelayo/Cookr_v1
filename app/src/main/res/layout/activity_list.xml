@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ShoppingList">
+
+    <ImageView
+        android:id="@+id/imgListHeader"
+        android:layout_width="160dp"
+        android:layout_height="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pngheader" />
+
+    <ImageButton
+        android:id="@+id/imgbtnListList"
+        android:layout_width="122dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/thelist" />
+
+    <ImageButton
+        android:id="@+id/imgbtnListRecipe"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        android:onClick="onbtnRecipe_Clicked"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgbtnListList"
+        app:srcCompat="@drawable/lerecipes" />
+
+    <ImageButton
+        android:id="@+id/imgbtnListFav"
+        android:layout_width="137dp"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        android:onClick="onbtnFav_Clicked"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imgbtnListRecipe"
+        app:srcCompat="@drawable/lefavourites" />
+
+    <ScrollView
+        android:layout_width="411dp"
+        android:layout_height="629dp"
+        app:layout_constraintBottom_toTopOf="@+id/imgbtnListRecipe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgListHeader"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TableLayout
+            android:id="@+id/ShoppingList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1,2,3"
+            android:layout_margin="8dp">
+
+            <TableRow>
+                <TextView
+                    android:text="In Basket"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:layout_column="1"/>
+                <TextView
+                    android:text="Item Name"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:layout_column="1"/>
+                <TextView
+                    android:text="Quantity"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:layout_column="1"/>
+            </TableRow>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/activity_shopping_list_item_layout"
+                />
+
+        </TableLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/clear_shopping_list"
+        android:layout_width="65dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="28dp"
+        android:text="Clear"
+        android:textSize="9dp"
+        android:onClick="onbtnClearShoppingList_Clicked"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
