@@ -1,4 +1,4 @@
-# Cookr_v1
+# 👨‍🍳Cookr_v1
 
 ### A cooking app designed to help students easily discover and cook new recipes.
 
